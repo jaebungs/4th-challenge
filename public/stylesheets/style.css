@@ -1,0 +1,71 @@
+body{
+    padding: 0 20px;
+    font-family: Roboto;
+    font-size: 16px;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.navbar{
+    background-color: black;
+    font-size: 18px;
+    text-align: center;
+}
+.nav-item{
+    display: inline-block;
+    margin: 10px 30px;
+}
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+/* vote buttons */
+.container{
+    margin: 50px 0;
+}
+
+.vote-containers{
+    display: flex;
+    justify-content: center;
+}
+
+.vote-container{
+    display: inline-block;
+    margin: 0 30px;
+    
+    width: 250px;
+    height: 100px;
+}
+.vote-btn{
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    padding: 20px 50px;
+}
+.vote-btn:hover {
+    cursor: pointer;
+}
+.vote-down{
+    background-color:rgba(255, 0, 0, 0.85);
+}
+
+/*image*/
+.cat-img{
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.img-size{
+    width: 600px;
+    height: 600px;
+    margin: 20px 50px;
+}
+.small-img{
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+
+}

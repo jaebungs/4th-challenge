@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatAPI</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <!-- fontawsome -->
+    <script src="https://kit.fontawesome.com/a6ad6954c2.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- navbar section -->
+    <div class="collapse navbar-collapse">
+        <nav class="navbar">
+            <ul class="navbar-ul">
+                <li class="nav-item">
+                    <a class="nav-link" href="#VOTE">Load random cats from MongoDB Atlas</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- random image and voting section -->
+    <div class="container" id="VOTE">
+        <div class="vote-containers">
+            <div class="vote-container">
+
+                <!-- So, when form is clicked, trigger POST method in app.js because it has same url -->
+                <!-- It works but I am not sure about this -->
+                <form action='/like/<%=randomCatImg.id%>?_method=PUT' method="POST">
+                    <button class="vote-up vote-btn">
+                        <i class="fas fa-thumbs-up"></i>
+                        Love it !!!
+                    </button>
+                </form>
+            </div>
+            <div class="vote-container">
+                <form action="/dislike/<%=randomCatImg.id%>?_method=PUT" method="POST">
+                    <button class="vote-down vote-btn">
+                        <i class="fas fa-thumbs-down"></i>
+                        Nope it !!!
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Random Cat Image -->
+        <div class="catimg-contianer">
+            <div class="cat-img">
+                <img class="img-size" src="<%=randomCatImg.url%>" alt="">
+            </div>
+            <!-- Upvoted cat images -->
+            <div class="upVoted-img">
+                <% upVotedCat.forEach((upVoted) => { %>
+                    <img src="<%=upVoted.url%>" class="small-img">
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
